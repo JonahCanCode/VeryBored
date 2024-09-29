@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play 1v1.LOL & Slope</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #444;
+            color: #00bcd4; /* Cyan */
+            padding: 1.5em;
+        }
+        .game-iframe {
+            width: 80%;
+            height: 600px; /* Adjust height as necessary */
+            border: 1px solid #ddd;
+            margin: 20px auto;
+        }
+        .fullscreen-btn {
+            background-color: #00bcd4; /* Cyan */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #444;
+            color: #00bcd4; /* Cyan */
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function toggleFullScreen(iframeId) {
+            var iframe = document.getElementById(iframeId);
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to the 1v1.LOL & Slope Game Hub</h1>
+    <p>Enjoy playing these exciting multiplayer games!</p>
+</header>
+
+<h2>Play 1v1.LOL</h2>
+<iframe id="lolIframe" class="game-iframe" src="https://1v1.lol/" title="1v1.LOL Game"></iframe>
+<button class="fullscreen-btn" onclick="toggleFullScreen('lolIframe')">Go Full Screen (1v1.LOL)</button>
+
+<h2>Play Slope</h2>
+<iframe id="slopeIframe" class="game-iframe" src="https://slopeonline.online" title="Slope Game"></iframe>
+<button class="fullscreen-btn" onclick="toggleFullScreen('slopeIframe')">Go Full Screen (Slope)</button>
+
+<footer>
+    <p>&copy; 2024 Play 1v1.LOL & Slope | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
